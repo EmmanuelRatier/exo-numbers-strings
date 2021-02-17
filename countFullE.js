@@ -16,8 +16,12 @@ Et j'ai deux fois vainqueur traversé l'Achéron;
 Modulant tour à tour sur la lyre d'Orphée
 Les soupirs de la sainte et les cris de la fée.'`
 
-let ch = 'e'
-
-let countE = msg.split(ch.toUpperCase()).length - 1
-let counte = msg.split(ch).length - 1
-console.log(countE + counte)
+msg = msg.toLowerCase()
+let countFullE = 0;
+let e = 'e'
+for (let i = 0; i < msg.length; i++) {
+  if (msg[i] === 'e' || msg[i] === 'é' || msg[i] === 'è' || msg[i] === 'ê') {
+    countFullE++
+  }
+}
+console.log(countFullE)

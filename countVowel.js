@@ -16,6 +16,8 @@ Et j'ai deux fois vainqueur traversé l'Achéron;
 Modulant tour à tour sur la lyre d'Orphée
 Les soupirs de la sainte et les cris de la fée.'`
 
+msg = msg.toLowerCase()
+
 let a = 'a'
 let e = 'e'
 let i = 'i'
@@ -23,11 +25,36 @@ let o = 'o'
 let u = 'u'
 let y = 'y'
 
-let countA = msg.split(a).length - 1
-let countE = msg.split(e).length - 1
-let countI = msg.split(i).length - 1
-let countO = msg.split(o).length - 1
-let countU = msg.split(u).length - 1
-let countY = msg.split(y).length - 1
+let countA = 0;
+let countE = 0;
+let countI = 0;
+let countO = 0;
+let countU = 0;
+let countY = 0;
 
-console.log(countA + countE + countI + countO + countU + countY)
+for (let i = 0; i < msg.length; i++) {
+  if (msg[i] === 'e' || msg[i] === 'é' || msg[i] === 'è' || msg[i] === 'ê') {
+    countE++
+  }
+  if (msg[i] === a) {
+    countA++
+  }
+  if (msg[i] === i) {
+    countI++
+  }
+  if (msg[i] === o) {
+    countO++
+  }
+  if (msg[i] === u) {
+    countU++
+  }
+  if (msg[i] === y) {
+    countY++
+  }
+}
+console.log(`le texte contient ${countE} e`)
+console.log(`le texte contient ${countA} a`)
+console.log(`le texte contient ${countI} i`)
+console.log(`le texte contient ${countO} o`)
+console.log(`le texte contient ${countU} u`)
+console.log(`le texte contient ${countY} y`)

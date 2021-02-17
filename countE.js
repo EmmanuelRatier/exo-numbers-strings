@@ -16,6 +16,10 @@ Et j'ai deux fois vainqueur traversé l'Achéron;
 Modulant tour à tour sur la lyre d'Orphée
 Les soupirs de la sainte et les cris de la fée.'`
 
-let regex = /e/g;
+let countE = 0;
 
-console.log(msg.match(regex).length)
+for (let i = 0; i < msg.length; i++) {
+  if (msg[i] === 'e')
+    countE++
+}
+console.log(countE);
